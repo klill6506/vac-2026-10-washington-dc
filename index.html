@@ -135,9 +135,9 @@
   "start": "2026-10-28",
   "end": "2026-10-30",
   "glance": [
-    { "date": "2026-10-28", "what": "Fly in; check in at the Marriott (4 PM)" },
+    { "date": "2026-10-28", "what": "Delta 1961 lands 12:58 PM; Marriott check-in from 4 PM" },
     { "date": "2026-10-29", "what": "CERCA Fall Conference, all day" },
-    { "date": "2026-10-30", "what": "Working groups (members only); fly home that night" }
+    { "date": "2026-10-30", "what": "Working groups; check out by noon; Delta 712 home at 7:40 PM" }
   ],
   "hotel": {
     "name": "Washington Marriott at Metro Center",
@@ -187,18 +187,24 @@
   },
   "travel": [
     {
-      "name": "Flights",
-      "status": "todo",
-      "status_label": "Not booked",
-      "note": "Plan: fly in Wednesday, October 28 and home Friday night, October 30. Reagan National (DCA) is the closest airport.",
-      "fields": [],
-      "links": []
+      "name": "Flights — Delta",
+      "status": "booked",
+      "status_label": "Booked",
+      "note": "Nonstop both ways between Atlanta and Reagan National. Classic fares, so you can change either flight for free, paying only any difference in fare.",
+      "fields": [
+        ["Confirmation", "HMHYV7"],
+        ["Wednesday, Oct 28", "Delta 1961 · leaves Atlanta 11:10 AM, lands Reagan National 12:58 PM · First Class, seat 3D"],
+        ["Friday, Oct 30", "Delta 712 · leaves Reagan National 7:40 PM, lands Atlanta 9:38 PM · Comfort, seat 13C"],
+        ["Fare", "$636.81 round trip"],
+        ["Bags", "Carry-on and two checked bags free each way"]
+      ],
+      "links": [["Delta — My Trips", "https://www.delta.com/mytrips/"]]
     },
     {
       "name": "Airport to hotel",
       "status": "waiting",
       "status_label": "Info",
-      "note": "From Reagan National, the Metro Blue Line runs to Metro Center with no change of train. Use the G & 12th Street exit; the hotel is steps away.",
+      "note": "From Reagan National, the Metro Blue Line runs to Metro Center with no change of train, about 20 minutes. Use the G & 12th Street exit; the hotel is steps away. You'll land about three hours before check-in, so leave your bag with the front desk if the room isn't ready. Friday: leave the hotel by about 6:00 PM for the 7:40 PM flight.",
       "fields": [],
       "links": [["WMATA trip planner", "https://www.wmata.com/"]]
     }
@@ -208,13 +214,14 @@
     { "when": null, "text": "Membership approval", "detail": "Vickie says it takes about a week and sounded routine. Don't register for the conference until it comes through.", "done": false },
     { "when": "2026-10-15", "text": "Register for the conference, as a member", "detail": "Once membership is approved. Member early bird is $545 until October 15, plus $100 for Friday's working groups.", "done": false },
     { "when": "2026-10-25", "text": "Last day to change the hotel for free", "detail": "Only matters if plans change: free cancellation until 11:59 PM on October 25, and leaving a night early costs one night's room.", "done": false },
-    { "when": null, "text": "Book flights", "detail": "Wednesday, October 28 in; Friday night, October 30 home.", "done": false },
+    { "when": null, "text": "Flights booked", "detail": "Delta, confirmation HMHYV7.", "done": true },
     { "when": null, "text": "Hotel booked on your Bonvoy account", "detail": "Confirmation 89389010, Platinum Elite.", "done": true },
     { "when": null, "text": "Hear back from Vickie on the agenda", "detail": "You asked on September 29 whether anything happens Tuesday or Wednesday during the day.", "done": false }
   ],
   "contacts": [
     ["CERCA office", "703-830-4789 · cerca@cerca.org"],
-    ["Hotel", "Washington Marriott at Metro Center · +1 202-737-2200"]
+    ["Hotel", "Washington Marriott at Metro Center · +1 202-737-2200"],
+    ["Delta", "800-221-1212 · or the Fly Delta app"]
   ]
 }
 </script>
