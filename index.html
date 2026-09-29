@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Washington, D.C. — CERCA Fall Conference</title>
+<meta name="description" content="Ken's trip to Washington, D.C. for the CERCA Fall 2026 Conference, October 28–30, 2026.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --card: #ffffff;
+    --card-soft: #f9f7f2;
+    --ink: #1c2433;
+    --ink-soft: #3d4658;
+    --muted: #6a7282;
+    --line: #dcd6c8;
+    --navy: #1f3a5f;
+    --navy-deep: #16293f;
+    --stone: #e8e1d1;
+    --accent: #a33327;
+    --green: #2e6b4a;
+    --green-wash: #e6f1ea;
+    --amber: #9a5a0c;
+    --amber-wash: #f8ecd8;
+    --red-wash: #f7e3e0;
+    --shadow: 0 1px 2px rgba(28, 36, 51, .06), 0 6px 18px rgba(28, 36, 51, .07);
+    --radius: 14px;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11161f;
+      --card: #1a2230;
+      --card-soft: #151c28;
+      --ink: #e9ecf2;
+      --ink-soft: #c3c9d5;
+      --muted: #8d95a6;
+      --line: #2c3647;
+      --navy: #9fbadf;
+      --navy-deep: #0d1520;
+      --stone: #232c3b;
+      --accent: #e0806f;
+      --green: #7fc79d;
+      --green-wash: #1b2e25;
+      --amber: #e6ae5e;
+      --amber-wash: #30261a;
+      --red-wash: #34201e;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 18px rgba(0, 0, 0, .3);
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.5; }
+  a { color: var(--navy); }
+  .wrap { width: min(880px, calc(100% - 32px)); margin: 0 auto; padding: 0 0 64px; }
+
+  header.hero {
+    background: linear-gradient(160deg, #1f3a5f 0%, #16293f 70%);
+    color: #f4f1ea; padding: 44px 0 36px; margin-bottom: 28px;
+    border-bottom: 4px solid #a33327;
+  }
+  header.hero .wrap { padding-bottom: 0; }
+  .kicker { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; opacity: .8; margin: 0 0 6px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 6vw, 46px); margin: 0 0 6px; line-height: 1.1; }
+  .sub { margin: 0; font-size: 17px; opacity: .92; }
+  .countdown { display: inline-block; margin-top: 16px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .tile { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; border-top: 3px solid var(--navy); }
+  .tile .day { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .tile .date { font-family: var(--serif); font-size: 20px; margin: 2px 0; }
+  .tile .what { color: var(--ink-soft); font-size: 14px; }
+
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 22px; margin: 34px 0 12px; color: var(--navy);
+    border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 14px; }
+  .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .card h3 { margin: 0; font-size: 18px; }
+  .card .note { color: var(--ink-soft); margin: 8px 0 0; }
+  .pill { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+  .pill.booked { background: var(--green-wash); color: var(--green); }
+  .pill.todo { background: var(--amber-wash); color: var(--amber); }
+  .pill.waiting { background: var(--stone); color: var(--ink-soft); }
+  .pill.pending { background: var(--red-wash); color: var(--accent); }
+  dl.fields { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 14px 0 0; }
+  dl.fields dt { color: var(--muted); font-size: 14px; }
+  dl.fields dd { margin: 0; }
+  .missing { color: var(--accent); font-style: italic; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .btn { display: inline-block; text-decoration: none; font-size: 14px; font-weight: 600; padding: 7px 14px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--navy); background: var(--card-soft); }
+  .btn:hover { border-color: var(--navy); }
+
+  ul.todos { list-style: none; padding: 0; margin: 0; }
+  ul.todos li { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 12px 16px; margin-bottom: 10px;
+    display: flex; gap: 12px; align-items: flex-start; }
+  ul.todos li.done { opacity: .55; }
+  ul.todos .when { min-width: 92px; font-size: 13px; color: var(--muted); padding-top: 2px; }
+  ul.todos .when.soon { color: var(--accent); font-weight: 600; }
+  ul.todos .text strong { display: block; }
+  ul.todos .text span { color: var(--ink-soft); font-size: 14px; }
+
+  table.fees { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  table.fees th, table.fees td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  table.fees th { color: var(--muted); font-weight: 600; }
+  table.fees td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
+  @media print {
+    header.hero { background: none; color: var(--ink); border-bottom: 2px solid #000; }
+    .btn, .countdown { display: none; }
+    .card, .tile, ul.todos li { box-shadow: none; border: 1px solid #ccc; }
+  }
+  @media (max-width: 560px) {
+    dl.fields { grid-template-columns: 1fr; }
+    dl.fields dt { margin-top: 6px; }
+    ul.todos li { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+  Everything on this page renders from the JSON in <script id="trip-data"> below.
+  Update the trip by editing that data; the layout code rarely needs touching.
+  This page is PUBLIC: reservation numbers and business contacts only, never
+  Ken's home address, personal phone or email, or card digits.
+-->
+<script type="application/json" id="trip-data">
+{
+  "title": "Washington, D.C.",
+  "subtitle": "CERCA Fall 2026 Conference",
+  "start": "2026-10-28",
+  "end": "2026-10-30",
+  "glance": [
+    { "date": "2026-10-28", "what": "Fly in; check in at the Marriott (4 PM)" },
+    { "date": "2026-10-29", "what": "CERCA Fall Conference, all day" },
+    { "date": "2026-10-30", "what": "Working groups (members only); fly home that night" }
+  ],
+  "hotel": {
+    "name": "Washington Marriott at Metro Center",
+    "status": "booked",
+    "status_label": "Booked",
+    "note": "The conference hotel, booked at the CERCA group rate. It's a Marriott, so this stay earns Bonvoy points.",
+    "fields": [
+      ["Address", "775 12th St NW, Washington, DC 20005"],
+      ["Phone", "+1 202-737-2200"],
+      ["Check-in", "Wednesday, October 28 — from 4:00 PM"],
+      ["Check-out", "Friday, October 30"],
+      ["Rate", "CERCA group rate"],
+      ["Confirmation", null],
+      ["Bonvoy", "Make sure your member number is on the reservation so the stay earns points."]
+    ],
+    "links": [
+      ["Hotel website", "https://www.marriott.com/en-us/hotels/wasmc-washington-marriott-at-metro-center/overview/"],
+      ["Map", "https://www.google.com/maps/search/?api=1&query=Washington+Marriott+at+Metro+Center+775+12th+St+NW+Washington+DC+20005"]
+    ]
+  },
+  "conference": {
+    "name": "CERCA Fall 2026 Conference",
+    "status": "todo",
+    "status_label": "Registration to confirm",
+    "note": "CERCA is the e-file industry's association with the IRS. Invited speakers include IRS Chief Executive Officer Frank Bisignano and IRS Chief of Taxpayer Services Ken Corbin.",
+    "fields": [
+      ["Conference", "Thursday, October 29 — at the hotel"],
+      ["Working groups", "Friday, October 30 — members only, $100 extra"],
+      ["Early bird ends", "Thursday, October 15"],
+      ["Cancellation", "By email by Thursday, October 22 for a full refund less a $25 fee"]
+    ],
+    "fees": [
+      ["Non-member, early bird", 645],
+      ["Non-member, regular", 695],
+      ["Member, early bird", 545],
+      ["Member, regular", 595]
+    ],
+    "links": [
+      ["Conference page & registration", "https://cerca.org/meetings/cerca-fall-2026-conference/"],
+      ["About CERCA", "https://cerca.org/about/"]
+    ]
+  },
+  "travel": [
+    {
+      "name": "Flights",
+      "status": "todo",
+      "status_label": "Not booked",
+      "note": "Plan: fly in Wednesday, October 28 and home Friday night, October 30. Reagan National (DCA) is the closest airport.",
+      "fields": [],
+      "links": []
+    },
+    {
+      "name": "Airport to hotel",
+      "status": "waiting",
+      "status_label": "Info",
+      "note": "From Reagan National, the Metro Blue Line runs to Metro Center with no change of train. Use the G & 12th Street exit; the hotel is steps away.",
+      "fields": [],
+      "links": [["WMATA trip planner", "https://www.wmata.com/"]]
+    }
+  ],
+  "todos": [
+    { "when": "2026-09-29", "text": "Send Vickie the membership paragraph", "detail": "A short paragraph on why you want to join CERCA, plus a description of the company. She forwards it to the Board.", "done": false },
+    { "when": "2026-10-15", "text": "Register for the conference", "detail": "Early bird ends October 15: $645 as a non-member, $545 if membership is approved first.", "done": false },
+    { "when": null, "text": "Book flights", "detail": "Wednesday, October 28 in; Friday night, October 30 home.", "done": false },
+    { "when": null, "text": "Put your Bonvoy number on the hotel reservation", "detail": "So the stay earns points.", "done": false },
+    { "when": null, "text": "Hear back from Vickie on the agenda", "detail": "You asked on September 29 whether anything happens Tuesday or Wednesday during the day. Friday's working groups are members only, so ask whether you can attend.", "done": false }
+  ],
+  "contacts": [
+    ["CERCA office", "703-830-4789 · cerca@cerca.org"],
+    ["Hotel", "Washington Marriott at Metro Center · +1 202-737-2200"]
+  ]
+}
+</script>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker" id="kicker"></p>
+    <h1 id="title"></h1>
+    <p class="sub" id="subtitle"></p>
+    <div class="countdown" id="countdown" hidden></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="glance" id="glance" aria-label="At a glance"></section>
+
+  <h2>Hotel</h2>
+  <div id="hotel"></div>
+
+  <h2>Conference</h2>
+  <div id="conference"></div>
+
+  <h2>Getting there</h2>
+  <div id="travel"></div>
+
+  <h2>To do</h2>
+  <ul class="todos" id="todos"></ul>
+
+  <h2>Contacts</h2>
+  <div class="card"><dl class="fields" id="contacts"></dl></div>
+
+  <footer id="footer"></footer>
+</main>
+
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('trip-data').textContent);
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  function parse(iso) { var p = iso.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function longDate(iso) { var d = parse(iso); return MONTHS[d.getMonth()] + ' ' + d.getDate(); }
+  function today() { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+  function daysUntil(iso) { return Math.round((parse(iso) - today()) / 86400000); }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  // Header
+  var s = parse(data.start), e = parse(data.end);
+  document.getElementById('kicker').textContent = 'Business trip · ' + s.getFullYear();
+  document.getElementById('title').textContent = data.title;
+  document.getElementById('subtitle').textContent = data.subtitle + ' · ' + MONTHS[s.getMonth()] + ' ' + s.getDate() + '–' + e.getDate() + ', ' + s.getFullYear();
+  var cd = document.getElementById('countdown');
+  var left = daysUntil(data.start), after = daysUntil(data.end);
+  if (left > 1) cd.textContent = left + ' days to go';
+  else if (left === 1) cd.textContent = 'Tomorrow';
+  else if (after >= 0) cd.textContent = 'Happening now';
+  else cd.textContent = 'Trip complete';
+  cd.hidden = false;
+
+  // At a glance
+  var glance = document.getElementById('glance');
+  data.glance.forEach(function (g) {
+    var t = el('div', 'tile');
+    t.appendChild(el('div', 'day', DAYS[parse(g.date).getDay()]));
+    t.appendChild(el('div', 'date', longDate(g.date)));
+    t.appendChild(el('div', 'what', g.what));
+    glance.appendChild(t);
+  });
+
+  // Cards
+  function card(item) {
+    var c = el('div', 'card');
+    var head = el('div', 'card-head');
+    head.appendChild(el('h3', null, item.name));
+    if (item.status_label) head.appendChild(el('span', 'pill ' + (item.status || 'waiting'), item.status_label));
+    c.appendChild(head);
+    if (item.note) c.appendChild(el('p', 'note', item.note));
+    if (item.fields && item.fields.length) {
+      var dl = el('dl', 'fields');
+      item.fields.forEach(function (f) {
+        dl.appendChild(el('dt', null, f[0]));
+        var dd = el('dd');
+        if (f[1] == null) { dd.appendChild(el('span', 'missing', 'Waiting on the confirmation email')); }
+        else dd.textContent = f[1];
+        dl.appendChild(dd);
+      });
+      c.appendChild(dl);
+    }
+    if (item.fees && item.fees.length) {
+      var table = el('table', 'fees');
+      var hr = el('tr'); hr.appendChild(el('th', null, 'Registration')); var th = el('th', null, 'Fee'); th.style.textAlign = 'right'; hr.appendChild(th);
+      table.appendChild(hr);
+      item.fees.forEach(function (f) {
+        var tr = el('tr'); tr.appendChild(el('td', null, f[0])); tr.appendChild(el('td', 'num', '$' + f[1])); table.appendChild(tr);
+      });
+      c.appendChild(table);
+    }
+    if (item.links && item.links.length) {
+      var b = el('div', 'buttons');
+      item.links.forEach(function (l) {
+        var a = el('a', 'btn', l[0]); a.href = l[1]; a.target = '_blank'; a.rel = 'noopener'; b.appendChild(a);
+      });
+      c.appendChild(b);
+    }
+    return c;
+  }
+  document.getElementById('hotel').appendChild(card(data.hotel));
+  document.getElementById('conference').appendChild(card(data.conference));
+  var travel = document.getElementById('travel');
+  data.travel.forEach(function (t) { travel.appendChild(card(t)); });
+
+  // To do: dated items first by date, then undated; done items last.
+  var todos = data.todos.slice().sort(function (a, b) {
+    if (a.done !== b.done) return a.done ? 1 : -1;
+    if (a.when && b.when) return a.when < b.when ? -1 : 1;
+    return a.when ? -1 : b.when ? 1 : 0;
+  });
+  var ul = document.getElementById('todos');
+  todos.forEach(function (t) {
+    var li = el('li', t.done ? 'done' : '');
+    var when = el('div', 'when');
+    if (t.done) when.textContent = 'Done';
+    else if (t.when) {
+      var n = daysUntil(t.when);
+      when.textContent = n < 0 ? 'Overdue' : n === 0 ? 'Today' : 'By ' + longDate(t.when);
+      if (n <= 7) when.className = 'when soon';
+    } else when.textContent = 'Anytime';
+    li.appendChild(when);
+    var text = el('div', 'text');
+    text.appendChild(el('strong', null, t.text));
+    if (t.detail) text.appendChild(el('span', null, t.detail));
+    li.appendChild(text);
+    ul.appendChild(li);
+  });
+
+  // Contacts
+  var dl = document.getElementById('contacts');
+  data.contacts.forEach(function (c) { dl.appendChild(el('dt', null, c[0])); dl.appendChild(el('dd', null, c[1])); });
+
+  document.getElementById('footer').textContent = 'Last updated ' + document.lastModified.split(' ')[0] + '.';
+})();
+</script>
+</body>
+</html>
